@@ -1,0 +1,16 @@
+{
+  "restaurante" : [
+    {
+      "precioPlato" : "200",
+      "nombrePlato" : "Tarta de Queso",
+      "categoria" : "postres",
+      "id" : 1
+    },
+    {
+      "precioPlato" : "300",
+      "nombrePlato" : "Solomillo de Ternera",
+      "categoria" : "carne",
+      "id" : 1
+    }
+  ]
+}
