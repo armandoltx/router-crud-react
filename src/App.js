@@ -1,17 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Productos from './components/Productos';
+import EditarProducto from './components/EditarProducto';
+import AgregarProducto from './components/AgregarProducto';
+import Producto from './components/Producto';
+
 
 function App() {
   return (
-    <div className="jumbotron">
-      <h1 class="display-3">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="my-4"/>
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
-
-    </div>
+    <Router>
+      <Switch>
+        {/* Los componentes con rutas mas especificas tienen que ir primero para q no se confundan */}
+        <Route exact path="/productos/nuevo" component={AgregarProducto} />
+        <Route exact path="/productos" component={Productos} />
+        <Route exact path="/productos/:id" component={Producto} />
+        <Route exact path="/productos/editar/:id" component={EditarProducto} />
+      </Switch>
+    </Router>
   );
 }
 
