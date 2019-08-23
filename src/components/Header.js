@@ -21,7 +21,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to='/nuveo-producto'
+                to='/nuevo-producto'
                 className="nav-link"
                 activeClassName="active"
               >Nuevo Producto</NavLink>

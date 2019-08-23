@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import ProductoLista from './ProductoLista';
 
-const Productos = () => {
+const Productos = ({productos}) => {
   return (
-    <h1 className="text-center">
-      Productos
-    </h1>
+    <Fragment>
+      <h1 className="text-center">Productos</h1>
+      <ul className="list-group mt-5">
+        {productos.map(producto => (
+          < ProductoLista
+            key={producto.id}
+            producto={producto}
+          />
+        ))}
+      </ul>
+    </Fragment>
   );
 };
 
