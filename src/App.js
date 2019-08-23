@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import axios from'axios';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Productos from './components/Productos';
@@ -8,6 +10,26 @@ import AgregarProducto from './components/AgregarProducto';
 import Producto from './components/Producto';
 
 function App() {
+
+  //state
+  const [ productos, guardarProductos ] = useState([]);
+
+  useEffect(() => {
+    const consultarApi = async () => { // para consultar la api de json server
+      const url = 'http://localhost:4000/restaurante';
+      const resultado = await axios.get(url);
+
+      console.log(resultado.data);
+      // actualizar el state
+
+      guardarProductos(resultado.data);
+    }
+    // llamar a la funcion para que se haga la consulta
+    consultarApi();
+  },[]);
+
+
+
   return (
     <Router>
       {/* Todo lo que se coloque entre <Router> y <Switch> se va a mostrar en todas las paginas */}
