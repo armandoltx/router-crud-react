@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Error from './Error';
 
+import axios from 'axios';
+
 const AgregarProducto = () => {
 
   //state
@@ -13,7 +15,7 @@ const AgregarProducto = () => {
     guardarCategoria(e.target.value);
   }
 
-  const agregarProducto = (e) => {
+  const agregarProducto = async (e) => {
     // prevenir el default comportamiento del formulario
     e.preventDefault();
 
@@ -29,6 +31,22 @@ const AgregarProducto = () => {
     guardarError(false);
 
     // Crear el nuevo producto
+    try {
+        const url = 'http://localhost:4000/restaurante';
+        const resultado = await axios.post(url, { // hay q pasarle un objeto que es el q queremos agregar.
+            // nombrePlatillo : nombrePlatillo, // al ser un objeto cuya key y su value son iguales se
+            // precioPlatillo : precioPlatillo, // puede ponder como lo ponemos por ES6
+            // categoria : categoria,
+            nombrePlatillo,
+            precioPlatillo,
+            categoria
+        });
+        console.log(resultado);
+
+
+    } catch (error) {
+         console.log(error);
+    }
 
   }
 
