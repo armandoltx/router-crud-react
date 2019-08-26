@@ -17,6 +17,12 @@
       "precioPlatillo": "100",
       "categoria": "ensalada",
       "id": 2
+    },
+    {
+      "nombrePlatillo": "Cerveza",
+      "precioPlatillo": "5",
+      "categoria": "bebida",
+      "id": 3
     }
   ]
 }

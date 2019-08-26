@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Error from './Error';
 
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AgregarProducto = () => {
 
@@ -41,11 +42,23 @@ const AgregarProducto = () => {
             precioPlatillo,
             categoria
         });
-        console.log(resultado);
+        // console.log(resultado);
+        if(resultado.status == 201) {
+            Swal.fire(
+              'Producto Creado',
+              'El Producto se creo correctamente',
+              'success'
+            )
+        }
 
 
     } catch (error) {
          console.log(error);
+         Swal.fire({
+           type: 'error',
+           title: 'Oops...',
+           text: 'Algo Fue mal, vuelve a intentarlo'
+         })
     }
 
   }
