@@ -29,6 +29,12 @@
       "precioPlatillo": "40",
       "categoria": "postre",
       "id": 5
+    },
+    {
+      "nombrePlatillo": "Ensalada Cesar",
+      "precioPlatillo": "120",
+      "categoria": "ensalada",
+      "id": 6
     }
   ]
 }

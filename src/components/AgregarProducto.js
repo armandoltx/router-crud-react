@@ -3,8 +3,11 @@ import Error from './Error';
 
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { withRouter } from 'react-router-dom';// higher order component para redirigir a otras paginas
+// gracias a este withRouter tenemos acceso a algo conocido como history, lo usamos como destructuring y con ello podemos redirigir al usuario donde queramos;
 
-const AgregarProducto = () => {
+
+const AgregarProducto = ({history}) => {
 
   //state
   const [ nombrePlatillo, guardarNombre ] = useState('');
@@ -60,6 +63,9 @@ const AgregarProducto = () => {
            text: 'Algo Fue mal, vuelve a intentarlo'
          })
     }
+
+    // Redirigimos al usuario a productos no importa si se creo o no
+    history.push('/productos');
 
   }
 
@@ -157,4 +163,4 @@ const AgregarProducto = () => {
   );
 };
 
-export default AgregarProducto;
+export default withRouter(AgregarProducto);
