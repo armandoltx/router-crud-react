@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';// higher order component para red
 // gracias a este withRouter tenemos acceso a algo conocido como history, lo usamos como destructuring y con ello podemos redirigir al usuario donde queramos;
 
 
-const AgregarProducto = ({history}) => {
+const AgregarProducto = ({ history, guardarRecargarProductos }) => {
 
   //state
   const [ nombrePlatillo, guardarNombre ] = useState('');
@@ -64,7 +64,8 @@ const AgregarProducto = ({history}) => {
          })
     }
 
-    // Redirigimos al usuario a productos no importa si se creo o no
+    // Redirigimos al usuario a productos no importa si se creo o no cambiamos regargarproducto como true para que haga la consulta a la API otra vez y muestre los valores sin necesidad de recargar
+    guardarRecargarProductos(true);
     history.push('/productos');
 
   }

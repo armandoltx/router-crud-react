@@ -13,20 +13,26 @@ function App() {
 
   //state
   const [ productos, guardarProductos ] = useState([]);
+  const [ recargarProductos, guardarRecargarProductos ] = useState(true);
 
   useEffect(() => {
-    const consultarApi = async () => { // para consultar la api de json server
-      const url = 'http://localhost:4000/restaurante';
-      const resultado = await axios.get(url);
+    if(recargarProductos) {
+      const consultarApi = async () => { // para consultar la api de json server
+          const url = 'http://localhost:4000/restaurante';
+          const resultado = await axios.get(url);
 
-      console.log(resultado.data);
-      // actualizar el state
+          console.log(resultado.data);
+          // actualizar el state
 
-      guardarProductos(resultado.data);
+          guardarProductos(resultado.data);
+      }
+      // llamar a la funcion para que se haga la consulta
+      consultarApi();
+
+      // cambiar a false recargarProducto una vez consultados los productos
+      guardarRecargarProductos(false);
     }
-    // llamar a la funcion para que se haga la consulta
-    consultarApi();
-  },[]);
+  }, [recargarProductos]);
 
   // Cuando quieras pasar datos al componente, tienes q usar render: con un arrow function
 
@@ -44,7 +50,14 @@ function App() {
               />
             ) }
           />
-          <Route exact path="/nuevo-producto" component={AgregarProducto} />
+          <Route exact path="/nuevo-producto"
+            render={ () => (
+              <AgregarProducto
+                guardarRecargarProductos={guardarRecargarProductos}
+              />
+            ) }
+          />
+
           <Route exact path="/productos/:id" component={Producto} />
           <Route exact path="/productos/editar/:id" component={EditarProducto} />
         </Switch>

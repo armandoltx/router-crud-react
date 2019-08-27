@@ -35,6 +35,30 @@
       "precioPlatillo": "120",
       "categoria": "ensalada",
       "id": 6
+    },
+    {
+      "nombrePlatillo": "Ensalada de Tomate",
+      "precioPlatillo": "140",
+      "categoria": "ensalada",
+      "id": 7
+    },
+    {
+      "nombrePlatillo": "Pollo asado",
+      "precioPlatillo": "300",
+      "categoria": "cortes",
+      "id": 8
+    },
+    {
+      "nombrePlatillo": "Tarta al Wisky",
+      "precioPlatillo": "123",
+      "categoria": "postre",
+      "id": 9
+    },
+    {
+      "nombrePlatillo": "Tinto de la Casa",
+      "precioPlatillo": "35",
+      "categoria": "bebida",
+      "id": 10
     }
   ]
 }
