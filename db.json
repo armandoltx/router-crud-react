@@ -1,28 +1,34 @@
 {
   "restaurante": [
     {
-      "precioPlato": "200",
-      "nombrePlato": "Tarta de Queso",
+      "precioPlatillo": "200",
+      "nombrePlatillo": "Tarta de Queso",
       "categoria": "postres",
       "id": 1
     },
     {
-      "precioPlato": "300",
-      "nombrePlato": "Solomillo de Ternera",
+      "precioPlatillo": "300",
+      "nombrePlatillo": "Solomillo de Ternera",
       "categoria": "carne",
-      "id": 1
+      "id": 2
     },
     {
       "nombrePlatillo": "Ensalada Primavera",
       "precioPlatillo": "100",
       "categoria": "ensalada",
-      "id": 2
+      "id": 3
     },
     {
       "nombrePlatillo": "Cerveza",
       "precioPlatillo": "5",
       "categoria": "bebida",
-      "id": 3
+      "id": 4
+    },
+    {
+      "nombrePlatillo": "Tarta de Manzana",
+      "precioPlatillo": "40",
+      "categoria": "postre",
+      "id": 5
     }
   ]
 }
