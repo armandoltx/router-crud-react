@@ -59,7 +59,24 @@ function App() {
           />
 
           <Route exact path="/productos/:id" component={Producto} />
-          <Route exact path="/productos/editar/:id" component={EditarProducto} />
+
+          <Route exact path="/productos/editar/:id"
+            render={ (props) => {
+              // Tomar el Id del producto
+              // console.log("props" ,props);
+              console.log(props.match.params.id); //esto retorna un string hay q pasarlo a numero
+              console.log(typeof props.match.params.id);
+              const idProducto = parseInt(props.match.params.id);
+
+              // tomar el producto que pasa al state
+              const producto = productos.filter((producto) => { return producto.id === idProducto })
+
+
+              return(
+                <EditarProducto producto={producto[0]} />
+              )
+            }}
+          />
         </Switch>
       </div>
       <Footer />

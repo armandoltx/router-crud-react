@@ -46,7 +46,7 @@ const AgregarProducto = ({ history, guardarRecargarProductos }) => {
             categoria
         });
         // console.log(resultado);
-        if(resultado.status == 201) {
+        if(resultado.status === 201) {
             Swal.fire(
               'Producto Creado',
               'El Producto se creo correctamente',
