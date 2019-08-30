@@ -1,20 +1,20 @@
 {
   "restaurante": [
     {
-      "precioPlatillo": "200",
+      "precioPlatillo": "120",
       "nombrePlatillo": "Tarta de Queso",
       "categoria": "postre",
       "id": 1
     },
     {
       "precioPlatillo": "300",
-      "nombrePlatillo": "Solomillo de Ternera",
+      "nombrePlatillo": "Solomillo de Ternera al pilpil",
       "categoria": "cortes",
       "id": 2
     },
     {
-      "nombrePlatillo": "Ensalada Primavera",
       "precioPlatillo": "100",
+      "nombrePlatillo": "Ensalada Primavera-Verano",
       "categoria": "ensalada",
       "id": 3
     },

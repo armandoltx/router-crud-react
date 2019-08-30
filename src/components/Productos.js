@@ -6,6 +6,7 @@ const Productos = ({productos}) => {
     <Fragment>
       <h1 className="text-center">Productos</h1>
       <ul className="list-group mt-5">
+        {console.log(productos)}
         {productos.map(producto => (
           <ProductoLista
             key={producto.id}

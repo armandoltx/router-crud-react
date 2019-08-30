@@ -73,7 +73,10 @@ function App() {
 
 
               return(
-                <EditarProducto producto={producto[0]} />
+                <EditarProducto
+                  producto={producto[0]}
+                  guardarRecargarProductos={guardarRecargarProductos}
+                />
               )
             }}
           />
