@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Error from './Error';
 
-const EditarProducto = () => {
+const EditarProducto = ({producto}) => {
+
+  console.log(producto);
+  console.log(producto.keys);
+  console.log(producto.nombrePlatillo);
+
+  // generar los refs el ref es la forma en la que accedes directamente a un elemento del dom
+  // se recomienda usar refs cuando estas editando un registro Los refs nos dan acceso a los valores
+  const nombrePlatilloRef = useRef('');
+  const precioPlatilloRef = useRef('');
+
+  // para que se vean los datos, agregamos un defaultValue={producto.nombrePlatillo}, para q se rellenen los campos automaticamente para los input radio se utiliza defaultChecked
 
   //state
-  const [ nombrePlatillo, guardarNombre ] = useState('');
-  const [ precioPlatillo, guardarPrecio ] = useState('');
   const [ categoria, guardarCategoria ] = useState('');
   const [ error, guardarError ] = useState(false);
 
@@ -35,6 +44,8 @@ const EditarProducto = () => {
                   className="form-control"
                   name="nombre"
                   placeholder="Nombre Platillo"
+                  ref={nombrePlatilloRef}
+                  defaultValue={producto.nombrePlatillo}
               />
           </div>
 
@@ -45,6 +56,8 @@ const EditarProducto = () => {
                   className="form-control"
                   name="precio"
                   placeholder="Precio Platillo"
+                  ref={precioPlatilloRef}
+                  defaultValue={producto.precioPlatillo}
               />
           </div>
 
@@ -57,6 +70,7 @@ const EditarProducto = () => {
                   name="categoria"
                   value="postre"
                   onChange={leerValorRadioCategoria}
+                  defaultChecked={(producto.categoria === 'postre')}
               />
               <label className="form-check-label">
                   Postre
@@ -69,6 +83,7 @@ const EditarProducto = () => {
                   name="categoria"
                   value="bebida"
                   onChange={leerValorRadioCategoria}
+                  defaultChecked={(producto.categoria === 'bebida')}
               />
               <label className="form-check-label">
                   Bebida
@@ -82,6 +97,7 @@ const EditarProducto = () => {
                   name="categoria"
                   value="cortes"
                   onChange={leerValorRadioCategoria}
+                  defaultChecked={(producto.categoria === 'cortes')}
               />
               <label className="form-check-label">
                   Cortes
@@ -95,6 +111,7 @@ const EditarProducto = () => {
                   name="categoria"
                   value="ensalada"
                   onChange={leerValorRadioCategoria}
+                  defaultChecked={(producto.categoria === 'ensalada')}
               />
               <label className="form-check-label">
                   Ensalada

@@ -3,13 +3,13 @@
     {
       "precioPlatillo": "200",
       "nombrePlatillo": "Tarta de Queso",
-      "categoria": "postres",
+      "categoria": "postre",
       "id": 1
     },
     {
       "precioPlatillo": "300",
       "nombrePlatillo": "Solomillo de Ternera",
-      "categoria": "carne",
+      "categoria": "cortes",
       "id": 2
     },
     {
