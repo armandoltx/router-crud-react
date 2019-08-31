@@ -75,9 +75,9 @@ const EditarProducto = (props) => {
     } catch (error) {
         console.log(error);
         Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Algo Fue mal, vuelve a intentarlo'
+            type: 'error',
+            title: 'Oops...',
+            text: 'Algo Fue mal, vuelve a intentarlo'
         })
     }
 

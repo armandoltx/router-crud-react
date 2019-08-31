@@ -1,28 +1,10 @@
 {
   "restaurante": [
     {
-      "precioPlatillo": "120",
-      "nombrePlatillo": "Tarta de Queso",
-      "categoria": "postre",
-      "id": 1
-    },
-    {
-      "precioPlatillo": "300",
-      "nombrePlatillo": "Solomillo de Ternera al pilpil",
-      "categoria": "cortes",
-      "id": 2
-    },
-    {
       "precioPlatillo": "100",
       "nombrePlatillo": "Ensalada Primavera-Verano",
       "categoria": "ensalada",
       "id": 3
-    },
-    {
-      "nombrePlatillo": "Cerveza",
-      "precioPlatillo": "5",
-      "categoria": "bebida",
-      "id": 4
     },
     {
       "nombrePlatillo": "Tarta de Manzana",
@@ -53,12 +35,6 @@
       "precioPlatillo": "123",
       "categoria": "postre",
       "id": 9
-    },
-    {
-      "nombrePlatillo": "Tinto de la Casa",
-      "precioPlatillo": "35",
-      "categoria": "bebida",
-      "id": 10
     }
   ]
 }
